@@ -256,3 +256,46 @@ hand_rank <- function(community_cards = NULL, player_cards, hand_lookup = hand_l
 
 
 hand_rank(player_cards = list("Player 1" = c("Ah", "As"), "Player 2" = c("Ad", "Kh"), "Player 3" = c("Qh", "Qs")))
+
+
+
+### MC simulation for n players for k hands
+set.seed(69)
+n_players <- 10
+k_hands <- 1e4
+
+sample_hands <- data.frame()
+for (i in 1:k_hands){
+  sample_hands <- rbind(sample_hands, sample(french_deck, 2*n_players + 5, replace = FALSE))  
+}
+names(sample_hands) <- c(paste0("P", 1:n_players, "_c1"), paste0("P", 1:n_players, "_c2"), paste0("com", 1:5))
+
+nlhe <- function(n_players = 10, k_hands = 1e4){
+  NULL
+}
+
+n.highcard <- 0
+n.onepair <- 0
+n.twopair <- 0
+n.set <- 0
+n.straight <- 0
+n.flush <- 0
+n.boat <- 0
+n.quads <- 0
+n.straightflush <- 0
+n.royal <- 0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
